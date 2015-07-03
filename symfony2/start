@@ -1,0 +1,3 @@
+#!/bin/bash
+docker run -d -p 80:80 -v ~/dev/projet_suivi:/var/www/:rw --name symfonyenv pnc/apache-php5 /bin/bash
+docker exec symfonyenv /var/www/install.sh
