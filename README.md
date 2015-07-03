@@ -1,11 +1,11 @@
 # docker
 
 
-Docker permettant d'encapsuler les applications en cours de developpement
+Projet de configuration de fichier docker permettant d'encapsuler les applications en cours de developpement
 
 Actuellement uniquement [Saisie des protocoles](https://github.com/PnCevennes/projet_suivi)
 
-# Fonctionnement : 
+## Fonctionnement : 
 
 * Construire l'archive
 ```
