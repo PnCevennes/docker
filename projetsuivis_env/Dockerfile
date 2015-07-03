@@ -24,11 +24,13 @@ RUN apt-get -y install  php5 php5-cli libapache2-mod-php5 libapache2-mod-wsgi \
                         php5-pgsql php5-gd php5-curl
 
 RUN mkdir -p /var/www/web
-RUN rm /etc/apache2/sites-available/000-default.conf
-ADD conf/apache2.default /etc/apache2/sites-available/000-default.conf
+ADD conf/apache2.default /etc/apache2/sites-available/projet_suivis.conf
 
 #RUN rm /etc/php5/apache2/php.ini
 #ADD ./conf/php.ini /etc/php5/apache2/php.ini
+
+RUN a2ensite projet_suivis.conf
+RUN a2dissite 000-default.conf
 
 #Activation du mode rewrite de apache2
 RUN a2enmod rewrite
