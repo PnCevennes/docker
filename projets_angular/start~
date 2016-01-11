@@ -1,0 +1,3 @@
+#!/bin/bash
+docker run -d -p 80:80 -v ~/dev/angular_simple_map:/var/www/:rw --name angularenv pnc/apache-php5 /bin/bash
+docker exec angularenv /var/www/install.sh

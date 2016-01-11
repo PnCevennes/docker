@@ -1,0 +1,6 @@
+#/bin/bash
+
+docker rm pnc/apache
+DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
+echo $DIR
+docker build -t pnc/apache $DIR
