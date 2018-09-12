@@ -1,0 +1,56 @@
+diff --git a/config/config.py.sample b/config/config.py.sample
+index 8c97357..c1d1f2d 100644
+--- a/config/config.py.sample
++++ b/config/config.py.sample
+@@ -45,6 +45,7 @@ ID_TAG_MYORGDATA = 22
+ ID_TAG_ALLDATA = 23
+ 
+ """ SERVER """
++HOST = '0.0.0.0'
+ PORT = 5001
+ DEBUG = False
+ 
+diff --git a/install_app.sh b/install_app.sh
+index ee69367..a152d36 100755
+--- a/install_app.sh
++++ b/install_app.sh
+@@ -18,10 +18,10 @@ cd ..
+ # Installation de l'environement python
+ 
+ echo "Installation du virtual env..."
+-virtualenv -p /usr/bin/python3 venv
+-source venv/bin/activate
++#virtualenv -p /usr/bin/python3 venv
++#source venv/bin/activate
+ pip install -r requirements.txt
+-deactivate
++#deactivate
+ 
+ # Installation de l'environement javascript
+ 
+@@ -31,9 +31,9 @@ cd ../..
+ 
+ 
+ #Lancement de l'application
+-DIR=$(readlink -e "${0%/*}")
+-sudo -s cp usershub-service.conf /etc/supervisor/conf.d/
+-sudo -s sed -i "s%APP_PATH%${DIR}%" /etc/supervisor/conf.d/usershub-service.conf
++#DIR=$(readlink -e "${0%/*}")
++#sudo -s cp usershub-service.conf /etc/supervisor/conf.d/
++#sudo -s sed -i "s%APP_PATH%${DIR}%" /etc/supervisor/conf.d/usershub-service.conf
+ 
+-sudo -s supervisorctl reread
+-sudo -s supervisorctl reload
+\ No newline at end of file
++#sudo -s supervisorctl reread
++#sudo -s supervisorctl reload
+diff --git a/server.py b/server.py
+index 331971e..47256ac 100644
+--- a/server.py
++++ b/server.py
+@@ -115,4 +115,4 @@ with app.app_context():
+ 
+ 
+ if __name__ == '__main__':
+-    app.run(debug=config.DEBUG, port=config.PORT)
++    app.run(debug=config.DEBUG, port=config.PORT, host=config.HOST)

@@ -1,0 +1,10 @@
+version: '2'
+services:
+    usershub:
+        build: usershub/
+        ports:
+            - '5001:5001'
+    oeasc:
+        build: oeasc/
+        ports:
+            - '5000:5000'
