@@ -9,15 +9,19 @@ RUN curl -sL https://deb.nodesource.com/setup_10.x | bash -
 
 RUN apt install -y libgeos-dev nodejs
 
-ADD app_oeasc /opt
-ADD settings.ini /opt/config/settings.ini
-
+# install libs python
+ADD app_oeasc/requirements.txt /etc/oeasc/requirements.txt
+WORKDIR /etc/oeasc
 RUN pip install -r requirements.txt
 
+# install libs js
+ADD app_oeasc/static/package.json /opt/static/package.json
 WORKDIR /opt/static
-
 RUN npm install
 
+#installation appli
+ADD app_oeasc /opt
+ADD settings.ini /opt/config/settings.ini
 WORKDIR /opt
 
 RUN install/init_config.sh config/settings.ini

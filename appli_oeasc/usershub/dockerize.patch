@@ -11,39 +11,39 @@ index 8c97357..c1d1f2d 100644
  DEBUG = False
  
 diff --git a/install_app.sh b/install_app.sh
-index ee69367..a152d36 100755
+index ee69367..908d7f1 100755
 --- a/install_app.sh
 +++ b/install_app.sh
-@@ -18,10 +18,10 @@ cd ..
- # Installation de l'environement python
+@@ -12,28 +12,3 @@ fi
  
- echo "Installation du virtual env..."
+ echo "préparation du fichier config.py..."
+ sed -i "s/SQLALCHEMY_DATABASE_URI = .*$/SQLALCHEMY_DATABASE_URI = \"postgresql:\/\/$user_pg:$user_pg_pass@$db_host:$pg_port\/$db_name\"/" config.py
+-
+-cd ..
+-
+-# Installation de l'environement python
+-
+-echo "Installation du virtual env..."
 -virtualenv -p /usr/bin/python3 venv
 -source venv/bin/activate
-+#virtualenv -p /usr/bin/python3 venv
-+#source venv/bin/activate
- pip install -r requirements.txt
+-pip install -r requirements.txt
 -deactivate
-+#deactivate
- 
- # Installation de l'environement javascript
- 
-@@ -31,9 +31,9 @@ cd ../..
- 
- 
- #Lancement de l'application
+-
+-# Installation de l'environement javascript
+-
+-cd app/static
+-npm install
+-cd ../..
+-
+-
+-#Lancement de l'application
 -DIR=$(readlink -e "${0%/*}")
 -sudo -s cp usershub-service.conf /etc/supervisor/conf.d/
 -sudo -s sed -i "s%APP_PATH%${DIR}%" /etc/supervisor/conf.d/usershub-service.conf
-+#DIR=$(readlink -e "${0%/*}")
-+#sudo -s cp usershub-service.conf /etc/supervisor/conf.d/
-+#sudo -s sed -i "s%APP_PATH%${DIR}%" /etc/supervisor/conf.d/usershub-service.conf
- 
+-
 -sudo -s supervisorctl reread
 -sudo -s supervisorctl reload
 \ No newline at end of file
-+#sudo -s supervisorctl reread
-+#sudo -s supervisorctl reload
 diff --git a/server.py b/server.py
 index 331971e..47256ac 100644
 --- a/server.py
