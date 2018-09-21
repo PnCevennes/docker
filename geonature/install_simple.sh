@@ -86,29 +86,30 @@ cd backend
 
 # Installation du virtual env
 # Suppression du venv s'il existe
-# if [ -d 'venv/' ]
-# then
-#   echo "Suppression du virtual env existant..."
-#   sudo rm -rf venv
-# fi
+if [ -d 'venv/' ]
+then
+  echo "Suppression du virtual env existant..."
+  sudo rm -rf venv
+fi
 
-# if [[ $python_path ]]; then
-#   echo "Installation du virtual env..."
-#   virtualenv -p $python_path venv
-# else
-#   virtualenv venv
-# fi
+if [[ $python_path ]]; then
+  echo "Installation du virtual env..."
+  virtualenv -p $python_path venv
+else
+  virtualenv venv
+fi
 
-# echo "Activation du virtual env..."
-# source venv/bin/activate
-# echo "Installation des dépendances python..."
-# pip install --upgrade pip
-# pip install -r requirements.txt
-# if [[ $MODE == "dev" ]]
-# then
-#   pip install -r requirements-dev.txt
-# fi
+echo "Activation du virtual env..."
+source venv/bin/activate
+echo "Installation des dépendances python..."
+pip install --upgrade pip
+pip install -r requirements.txt
+if [[ $MODE == "dev" ]]
+then
+  pip install -r requirements-dev.txt
+fi
 echo "Création des commandes 'geonature'..."
+echo BASEDIR $BASE_DIR
 python ${BASE_DIR}/geonature_cmd.py install_command
 echo "Création de la configuration du frontend depuis 'config/geonature_config.toml'..."
 geonature generate_frontend_config --conf-file ${BASE_DIR}/config/geonature_config.toml --build=false
