@@ -18,11 +18,10 @@ RUN npm install
 
 ADD GeoNature /opt
 ADD settings.ini /opt/config/settings.ini
-#ADD install_simple.sh /opt/install/install_simple.sh
+ADD install_simple.sh /opt/install/install_simple.sh
 WORKDIR /opt/install
 RUN ls
-#RUN ./install_simple.sh
-RUN ./install_app.sh
+RUN ./install_simple.sh
 
 WORKDIR /opt
 EXPOSE 5000

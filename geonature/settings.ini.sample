@@ -5,7 +5,7 @@ monuser=joel
 ###################
 
 # Url of the server must end with /
-my_url=http://url.com/
+my_url=http://127.0.0.1/
 
 
 # PostgreSQL Configuration
@@ -26,9 +26,9 @@ db_port=5432
 #nom de la base de données de l'application
 db_name=geonature2db
 #nom de l'utilisateur propriétaire de la base de l'application
-user_pg=dbadmin
+user_pg=
 #user propriétaire de la base de l'application
-user_pg_pass=Jc2018
+user_pg_pass=
 
 
 # Local projection SRID
