@@ -1,0 +1,29 @@
+FROM python:3.7.0-stretch
+
+RUN apt update && apt install -y --no-install-recommends apt-utils libgeos-dev build-essential sudo python3-pip supervisor
+
+RUN pip3 install virtualenv
+
+RUN curl -sL https://deb.nodesource.com/setup_8.x | bash -
+
+RUN apt install -y nodejs
+
+ADD GeoNature/backend/requirements.txt /etc/GeoNature/backend/requirements.txt
+WORKDIR /etc/GeoNature/backend
+RUN pip install -r requirements.txt
+
+ADD GeoNature/frontend/package.json /opt/frontend/package.json
+WORKDIR /opt/frontend
+RUN npm install
+
+ADD GeoNature /opt
+ADD settings.ini /opt/config/settings.ini
+ADD install_simple.sh /opt/install/install_simple.sh
+WORKDIR /opt/install
+RUN ls
+RUN ./install_simple.sh
+
+WORKDIR /opt
+EXPOSE 5000
+
+CMD ["python", "backend/server.py", "runserver"]
