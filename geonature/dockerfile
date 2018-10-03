@@ -1,5 +1,5 @@
-FROM python:3.7.0-stretch
 
+FROM python:3.7.0-stretch
 
 # apt install
 
@@ -76,18 +76,18 @@ WORKDIR /opt/GeoNature/backend
 RUN . venv/bin/activate && geonature generate_frontend_tsconfig
 RUN ls /opt/GeoNature/config/
 RUN more /opt/GeoNature/config/geonature_config.toml
-#RUN . venv/bin/activate && geonature generate_frontend_modules_route
+RUN . venv/bin/activate && geonature generate_frontend_modules_route
 
 # build module occtax
 
-#WORKDIR /opt/GeoNature/backend
-#RUN . venv/bin/activate && geonature install_gn_module /opt/GeoNature/contrib/occtax /occtax --build=false
+WORKDIR /opt/GeoNature/backend
+RUN . venv/bin/activate && geonature install_gn_module /opt/GeoNature/contrib/occtax /occtax --build=false
 
 #build front end
 
-#WORKDIR /opt/GeoNature/frontend
-#RUN rebuild node-sass --force
-#RUN build
+WORKDIR /opt/GeoNature/frontend
+RUN rebuild node-sass --force
+RUN build
 
 
 #WORKDIR /opt

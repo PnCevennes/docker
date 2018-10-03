@@ -3,9 +3,7 @@
   echo "Création du fichier de configuration ..."
   cp config/geonature_config.toml.sample config/geonature_config.toml
   echo "Préparation du fichie r de configuration..."
-  echo $my_url
   my_url="${my_url//\//\\/}"
-  echo $my_url
   sed -i "s/SQLALCHEMY_DATABASE_URI = .*$/SQLALCHEMY_DATABASE_URI = \"postgresql:\/\/$user_pg:$user_pg_pass@$db_host:$db_port\/$db_name\"/" config/geonature_config.toml
   sed -i "s/URL_APPLICATION = .*$/URL_APPLICATION = '${my_url}geonature' /g" config/geonature_config.toml
   sed -i "s/API_ENDPOINT = .*$/API_ENDPOINT = '${my_url}geonature\/api'/g" config/geonature_config.toml
