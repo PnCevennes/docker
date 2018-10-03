@@ -101,13 +101,13 @@ fi
 
 echo "Activation du virtual env..."
 source venv/bin/activate
-echo "Installation des dépendances python..."
-pip install --upgrade pip
-pip install -r requirements.txt
-if [[ $MODE == "dev" ]]
-then
-  pip install -r requirements-dev.txt
-fi
+# echo "Installation des dépendances python..."
+# pip install --upgrade pip
+# pip install -r requirements.txt
+# if [[ $MODE == "dev" ]]
+# then
+#   pip install -r requirements-dev.txt
+# fi
 echo "Création des commandes 'geonature'..."
 echo BASEDIR $BASE_DIR
 python ${BASE_DIR}/geonature_cmd.py install_command
