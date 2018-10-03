@@ -31,11 +31,11 @@ else
     cd ../..
 fi
 
-cp settings.ini userhub/.
+cp settings.ini usershub/.
 cp settings.ini geonature/.
 cp settings.ini taxhub/.
 
-echo "Allez prendre troix café"
+echo "Allez prendre trois café"
 docker-compose build
 
 echo "TERMINÉ !"
