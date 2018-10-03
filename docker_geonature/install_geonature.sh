@@ -11,6 +11,11 @@ else
     cd ../..
 fi
 
+cd usershub/UsersHub
+git apply ../dockerize.patch
+cd ../..
+
+
 if ! [ -d geonature/GeoNature ]
 then
 git clone https://github.com/PnX-SI/GeoNature.git -b master geonature/GeoNature
@@ -30,6 +35,11 @@ else
     git pull
     cd ../..
 fi
+
+cd taxhub/TaxHub
+git apply ../dockerize.patch
+cd ../..
+
 
 cp settings.ini usershub/.
 cp settings.ini geonature/.
