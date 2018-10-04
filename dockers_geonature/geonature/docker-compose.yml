@@ -1,14 +1,14 @@
 version: '2'
 services:
     usershub:
-        build: usershub/
+        build: ../usershub/
         ports:
             - '5001:5001'
     taxhub:
-        build: taxhub/
+        build: ../taxhub/
         ports:
             - '5000:5002'
     geonature:
-        build: geonature/
+        build: .
         ports:
             - '5000:5000'
