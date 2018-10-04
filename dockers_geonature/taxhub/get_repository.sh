@@ -1,5 +1,5 @@
-dir_path=UsersHub
-url_repository="https://github.com/PnEcrins/UsersHub.git -b uhv2"
+dir_path=TaxHub
+url_repository="https://github.com/PnX-SI/TaxHub.git"
 
 current_dir=$(pwd)
 

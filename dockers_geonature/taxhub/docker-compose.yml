@@ -1,6 +1,6 @@
 version: '2'
 services:
-    usershub:
+    taxhub:
         build: .
         ports:
-            - '5001:5001'
+            - '5002:5002'

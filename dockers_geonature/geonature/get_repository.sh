@@ -1,5 +1,5 @@
-dir_path=UsersHub
-url_repository="https://github.com/PnEcrins/UsersHub.git -b uhv2"
+dir_path=GeoNature
+url_repository="https://github.com/PnX-SI/GeoNature.git -b master"
 
 current_dir=$(pwd)
 
