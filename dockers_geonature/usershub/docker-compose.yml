@@ -1,0 +1,6 @@
+version: '2'
+services:
+    usershub_test:
+        build: .
+        ports:
+            - '5001:50011'

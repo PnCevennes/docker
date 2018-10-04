@@ -78,7 +78,7 @@ RUN more /opt/GeoNature/config/geonature_config.toml
 RUN . venv/bin/activate && geonature generate_frontend_modules_route
 
 # build module occtax
-
+RUN apt install -y postgresql postgresql-contrib
 WORKDIR /opt/GeoNature/
 RUN . backend/venv/bin/activate && geonature install_gn_module /opt/GeoNature/contrib/occtax /occtax --build=false
 
