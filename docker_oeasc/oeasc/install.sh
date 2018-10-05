@@ -10,16 +10,12 @@ then
 fi
 
 ./get_repository.sh
-ls
 cd ../usershub
 ./get_repository.sh
 cd $current_install_dir
 
-cp
-
 echo "Construction du container docker"
 echo "Allez prendre deux cafés"
-pwd
 docker-compose build
 
 echo "TERMINÉ !"
