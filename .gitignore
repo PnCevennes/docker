@@ -9,3 +9,4 @@ geonature/GeoNature
 **/settings.ini
 docker_geonature/taxhub/settings.ini
 docker_geonature/usershub/settings.ini
+docker_oeasc/oeasc/data_ref_geo/*.csv

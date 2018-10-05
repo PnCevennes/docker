@@ -1,5 +1,5 @@
 dir_path=app_oeasc
-url_repository="https://github.com/PnCevennes/app_oeasc"
+url_repository="https://github.com/PnCevennes/app_oeasc -b master"
 
 current_dir=$(pwd)
 
