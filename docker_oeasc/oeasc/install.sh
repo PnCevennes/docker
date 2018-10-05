@@ -9,6 +9,8 @@ then
 
 fi
 
+cp settings.ini ../usershub/.
+
 ./get_repository.sh
 cd ../usershub
 ./get_repository.sh
