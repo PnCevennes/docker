@@ -1,4 +1,18 @@
+<<<<<<< HEAD
 appli_oeasc/settings.ini
 geonature/GeoNature*
 geonature/install_all.ini
 geonature/settings.ini
+=======
+# docker_oeasc/settings.ini
+geonature/GeoNature
+# geonature/settings.ini
+# docker_geonature/settings.ini
+**/UsersHub
+**/GeoNature
+**/TaxHub
+**/app_oeasc
+**/settings.ini
+docker_geonature/taxhub/settings.ini
+docker_geonature/usershub/settings.ini
+>>>>>>> db165701410250c5c017e8e4a9662d89f011b934

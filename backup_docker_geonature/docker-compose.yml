@@ -1,0 +1,14 @@
+version: '2'
+services:
+    usershub:
+        build: usershub/
+        ports:
+            - '5001:5001'
+    geonature:
+        build: geonature/
+        ports:
+            - '5000:5000'
+    taxhub:
+        build: taxhub/
+        ports:
+            - '5000:5002'

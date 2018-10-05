@@ -1,0 +1,44 @@
+###########################
+### PostgreSQL settings ###
+###########################
+
+# Effacer la base de donnée existante lors de l'installation
+drop_apps_db=false
+# Host de la base de données de l'application
+db_host=127.0.0.1
+# Port du serveur PostgreSQL
+pg_port=5432
+# Nom de la base de données de l'application
+db_name=db_oeasc
+# Nom de l'utilisateur propriétaire de la BDD de l'application
+user_pg=oeasc_admin
+# User propriétaire de la BDD de l'application
+user_pg_pass=SuperSecret
+# Intégrer les données minimales (Applications et tags)
+insert_minimal_data=false
+# Intégrer les données exemple (Role, groupe, organismes et correspondances)
+insert_sample_data=false
+
+#######################
+### Python settings ###
+#######################
+
+# Notice: n'est compatible qu'avec python3
+python_path=/usr/bin/python3
+
+##########################
+### app OEASC settings ###
+##########################
+
+ID_APP=500
+URL_APPLICATION="localhost:5000"
+URL_USERHUB="localhost:5001"
+
+
+#########################
+### Gunicorn settings ###
+#########################
+
+gun_num_workers=4
+gun_host=0.0.0.0
+gun_port=5001
