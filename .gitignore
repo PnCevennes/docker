@@ -5,6 +5,7 @@ geonature/GeoNature
 **/UsersHub
 **/GeoNature
 **/TaxHub
+**/app_oeasc
 **/settings.ini
 docker_geonature/taxhub/settings.ini
 docker_geonature/usershub/settings.ini

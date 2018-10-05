@@ -19,12 +19,12 @@ RUN apt install -y nodejs
 # install python requirements
 
 ADD GeoNature/backend/requirements.txt /opt/GeoNature/backend/requirements.txt
-ADD GeoNature/backend/requirements-dev.txt /opt/GeoNature/backend/requirements-dev.txt
+#ADD GeoNature/backend/requirements-dev.txt /opt/GeoNature/backend/requirements-dev.txt
 WORKDIR /opt/GeoNature/backend
 RUN virtualenv venv
 RUN . venv/bin/activate
 RUN . venv/bin/activate && pip install -r requirements.txt
-RUN . venv/bin/activate && pip install -r requirements-dev.txt
+#RUN . venv/bin/activate && pip install -r requirements-dev.txt
 
 
 # install node modules
@@ -80,7 +80,7 @@ RUN . venv/bin/activate && geonature generate_frontend_modules_route
 # build module occtax
 RUN apt install -y postgresql postgresql-contrib
 WORKDIR /opt/GeoNature/
-#RUN . backend/venv/bin/activate && geonature install_gn_module /opt/GeoNature/contrib/occtax /occtax --build=false
+RUN . backend/venv/bin/activate && geonature install_gn_module /opt/GeoNature/contrib/occtax /occtax --build=false 2>/dev/null || :
 
 #build front end
 
@@ -88,8 +88,7 @@ WORKDIR /opt/GeoNature/frontend
 RUN npm rebuild node-sass --force
 RUN npm run build
 
-
 #WORKDIR /opt
-#EXPOSE 5000
+EXPOSE 5000
 
-#CMD ["python", "backend/server.py", "runserver"]
+CMD ["python", "backend/server.py", "runserver"]

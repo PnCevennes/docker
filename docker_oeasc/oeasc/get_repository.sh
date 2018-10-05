@@ -1,5 +1,5 @@
-dir_path=GeoNature
-url_repository="https://github.com/PnX-SI/GeoNature.git -b master"
+dir_path=app_oeasc
+url_repository="https://github.com/PnCevennes/app_oeasc"
 
 current_dir=$(pwd)
 

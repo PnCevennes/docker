@@ -1,5 +1,3 @@
-current_install_dir=$(pwd)
-
 if ! [ -f ./settings.ini ]
 then
 
@@ -9,21 +7,10 @@ then
 
 fi
 
-cp settings.ini ../usershub/. ../taxhub/.
-
 ./get_repository.sh
-
-cd ../usershub
-./get_repository.sh
-
-cd $current_install_dir
-cd ../taxhub
-./get_repository.sh
-
-cd $current_install_dir
 
 echo "Construction du container docker"
-echo "Allez prendre trois cafés"
+echo "Allez prendre un café"
 docker-compose build
 
 echo "TERMINÉ !"
