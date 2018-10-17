@@ -11,9 +11,12 @@ fi
 
 cp settings.ini ../usershub/.
 
+
 ./get_repository.sh
+
 cd ../usershub
 ./get_repository.sh
+
 cd $current_install_dir
 
 echo "Construction du container docker"
