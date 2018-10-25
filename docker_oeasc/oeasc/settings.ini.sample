@@ -8,6 +8,7 @@ drop_apps_db=false
 db_host=127.0.0.1
 # Port du serveur PostgreSQL
 pg_port=5432
+db_port=5432
 # Nom de la base de données de l'application
 db_name=db_oeasc
 # Nom de l'utilisateur propriétaire de la BDD de l'application
