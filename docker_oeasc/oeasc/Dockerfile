@@ -12,7 +12,7 @@ RUN apt install -y libgeos-dev nodejs
 # install libs python
 ADD app_oeasc/requirements.txt /etc/oeasc/requirements.txt
 WORKDIR /etc/oeasc
-RUN pip install -r requirements.txt
+RUN pip install -r requirements.txt --upgrade
 
 # install libs js
 ADD app_oeasc/static/package.json /opt/static/package.json

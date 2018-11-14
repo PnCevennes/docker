@@ -17,15 +17,22 @@ user_install_pass=""
 
 
 
+reset_geom=false
+
 #Configuration python
 ###########################
 #Notice: n'est compatible qu'avec python3
 python_path=/usr/bin/python3
 
+MODE_TEST=0
+
 ID_APP=500
 URL_APPLICATION="localhost:5000"
 URL_USERHUB="localhost:5001"
 
+ADMIN_APPLICATION_LOGIN=""
+ADMIN_APPLICATION_PASSWORD=""
+ADMIN_APPLICATION_MAIL=""
 
 #####################
 ### Gunicorn settings
@@ -36,15 +43,10 @@ gun_port=5001
 
 
 ##### mail
-
-MAIL_ANIMATEUR=somemail
-DEFAULT_MAIL_SENDER=somemail
+ANIMATEUR_APPLICATION_MAIL=somemail
 
 MAIL_SERVER=smtp.gmail.com,
 MAIL_PORT=465
-MAIL_USE_TLS=False
-MAIL_USE_SSL=True
-
 MAIL_USERNAME=some_user@gmail.com
 MAIL_PASSWORD=some_password
 
