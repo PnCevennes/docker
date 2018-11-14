@@ -1,5 +1,5 @@
 dir_path=UsersHub
-url_repository="https://github.com/PnEcrins/UsersHub.git -b uhv2"
+url_repository="https://github.com/joelclems/UsersHub.git -b uhv2"
 
 current_dir=$(pwd)
 
