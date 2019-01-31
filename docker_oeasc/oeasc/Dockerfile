@@ -18,6 +18,7 @@ RUN pip install -r requirements.txt --upgrade
 ADD app_oeasc/static/package.json /opt/static/package.json
 WORKDIR /opt/static
 RUN npm install
+RUN npm install bootstrap@4.1.3
 
 #installation appli
 ADD app_oeasc /opt
