@@ -24,5 +24,4 @@ echo "install docker for application ${docker_name}"
 
 ./get_repository.sh $docker_name
 
-ln -sf ../repositories/${docker_name}/ ${docker_name}/.
 docker-compose build $docker_name

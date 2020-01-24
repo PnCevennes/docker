@@ -1,0 +1,52 @@
+#host de la base de données de l'application
+db_host=localhost
+#Port du serveur PostgreSQL
+db_port=5432
+#nom de la base de données de l'application
+db_name=usershubdb
+#nom de l'utilisateur propriétaire de la base de l'application
+user_pg=geonatuser
+#user propriétaire de la base de l'application
+user_pg_pass=monpassachanger
+
+# facultatif
+#nom de l'utilisateur ayant des droit superutilisateur
+user_install=""
+#user propriétaire de la base de l'application
+user_install_pass=""
+
+
+
+reset_geom=false
+
+#Configuration python
+###########################
+#Notice: n'est compatible qu'avec python3
+python_path=/usr/bin/python3
+
+MODE_TEST=0
+
+ID_APP=500
+URL_APPLICATION="localhost:5000"
+URL_USERHUB="localhost:5001"
+
+ADMIN_APPLICATION_LOGIN=""
+ADMIN_APPLICATION_PASSWORD=""
+ADMIN_APPLICATION_MAIL=""
+
+#####################
+### Gunicorn settings
+#####################
+gun_num_workers=4
+gun_host=0.0.0.0
+gun_port=5001
+
+
+##### mail
+ANIMATEUR_APPLICATION_MAIL=somemail
+
+MAIL_SERVER=smtp.gmail.com,
+MAIL_PORT=465
+MAIL_USERNAME=some_user@gmail.com
+MAIL_PASSWORD=some_password
+
