@@ -24,6 +24,3 @@ echo "install docker for application ${docker_name}"
 ./get_repository.sh $docker_name
 
 docker-compose build $docker_name
-
-
-

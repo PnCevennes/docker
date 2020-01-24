@@ -1,6 +1,6 @@
 version: '2'
 services:
     usershub:
-        build: userhub
+        build: usershub
         ports:
             - '5011:5001'
