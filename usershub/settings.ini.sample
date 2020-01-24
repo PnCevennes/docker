@@ -26,14 +26,6 @@ insert_sample_data=true
 # URL de l'application
 url_application=http://mon_url.fr
 
-############################
-### Docker settings ###
-############################
-repository_url=
-repository_dir_path=
-inner_port=
-outer_port=
-
 #######################
 ### Python settings ###
 #######################

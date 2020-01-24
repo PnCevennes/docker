@@ -1,6 +1,6 @@
 docker_name=$1
 
-if ! [ -d ${docker_name} ]
+if ! [ -d ${docker_naname} ]
 then
     echo le repertoire ${docker_name} n\'est pas présent.
     exit 1  
