@@ -1,6 +1,7 @@
 if [ -z $1 ]
 then
     echo get_repository.sh : veuillez renseigner le nom du docker
+    exit 1
 fi
 
 docker_name=$1
@@ -23,4 +24,5 @@ echo "install docker for application ${docker_name}"
 
 ./get_repository.sh $docker_name
 
+ln -sf ../repositories/${docker_name}/ ${docker_name}/.
 docker-compose build $docker_name

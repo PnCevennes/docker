@@ -10,7 +10,7 @@ docker_name=$1
 url_repository_var_name=url_repository_${docker_name}
 url_repository=${!url_repository_var_name}
 
-repository_dir_path=repositories/${docker_name}
+repository_dir_path=${docker_name}/repository
 
 current_dir=$(pwd)
 
