@@ -4,3 +4,7 @@ services:
         build: usershub
         ports:
             - '5001:5001'
+    oeasc:
+        build: oeasc
+        ports:
+            - '5005:5005'

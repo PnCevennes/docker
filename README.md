@@ -12,8 +12,12 @@ Pour chaque docker à installer, suivre les instructions ci dessous et relancer 
 
 `docker-compose up -d`
 
+Les diffrents dockers disponibles à ce jours sont :
 
-## UsersHub
+* usershub
+* oeasc
+
+## usershub
 
 * Copier `settings.ini.sample` dans `settings.ini` et renseigner les dépôts.
 
@@ -22,4 +26,15 @@ Pour chaque docker à installer, suivre les instructions ci dessous et relancer 
 * Exécuter la commande pour installer le docker
 
 `./install_docker.sh usershub`
+
+
+## oeasc
+
+* Copier `settings.ini.sample` dans `settings.ini` et renseigner les dépôts.
+
+`cp settings.ini.sample settings.ini`.
+
+* Exécuter la commande pour installer le docker
+
+`./install_docker.sh oeasc`
 
