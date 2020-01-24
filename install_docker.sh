@@ -1,6 +1,6 @@
 docker_name=$1
 
-if ! [ -d ${dirname} ]
+if ! [ -d ${docker_name} ]
 then
     echo le repertoire ${docker_name} n\'est pas présent.
     exit 1  
@@ -16,7 +16,7 @@ fi
 
 echo "install docker for application ${docker_name}"
 
-./get_repository.sh
+./get_repository.sh $docker_name
 
 cd ${docker_name}
 docker_compose build

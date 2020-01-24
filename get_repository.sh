@@ -1,14 +1,16 @@
-if ["$repository_dir_path" = ""]
+if [ -z $1 ]
 then
-    echo La variable $repository_dir_path n\'est pas définie.
+    echo get_repository.sh : veuillez renseigner le nom du docker
 fi
 
-if ["$repository_url" = ""]
-then
-    echo La variable $repository_url n\'est pas définie.
-fi
+docker_name=$1
+repository_dir_path=repositories/${docker_name}
 
-dir_path=repositories/$repository_dir_path
+. url_repositories.ini
+url_repository_var_name=url_repository_${docker_name}
+url_repository=${!url_repository_var_name}
+
+exit 1
 
 # url_repository="https://github.com/PnX-SI/UsersHub.git -b master"
 current_dir=$(pwd)
@@ -16,12 +18,11 @@ current_dir=$(pwd)
 if ! [ -d $dir_path ] 
 then
 
-    git clone $url_repository $dir_path
+    git clone $url_repository $repository_dir_path
 
 else
 
-    cd $dir_path
-    git checkout .
+    cd $repository_dir_path
     git pull
     cd $current_dir
 
