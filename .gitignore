@@ -3,5 +3,9 @@
 **/GeoNature
 **/TaxHub
 **/app_oeasc
-**/settings.ini
 docker_oeasc/oeasc/data
+
+**/settings.ini
+repositories/**
+!repositories/gitkeep
+
