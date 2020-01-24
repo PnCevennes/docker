@@ -8,4 +8,6 @@ docker_oeasc/oeasc/data
 **/settings.ini
 repositories/**
 !repositories/gitkeep
+url_repositories.ini
+docker-compose.yml
 
