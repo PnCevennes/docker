@@ -25,3 +25,7 @@ echo "install docker for application ${docker_name}"
 ./get_repository.sh $docker_name
 
 docker-compose build $docker_name
+
+echo Pour relancer les dockers, vous pouvez lancer la commande suivante
+echo docker-compose up -d
+ 
