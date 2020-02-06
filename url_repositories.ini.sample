@@ -1,2 +1,2 @@
 url_repository_usershub="https://github.com/PnX-SI/UsersHub.git -b master"
-url_repository_oeasc="https://github.com/PnCevennes/app_oeasc.git -b users"
+url_repository_oeasc="https://github.com/PnCevennes/app_oeasc.git -b develop"
