@@ -16,6 +16,8 @@ RUN npm install
 ADD init_app_docker.sh /opt/init_app_docker.sh
 
 # ajout de l'appli
+RUN ls
+
 ADD repository /opt
 ADD settings.ini /opt/config/settings.ini
 
@@ -23,6 +25,11 @@ WORKDIR /opt
 
 RUN ./init_app_docker.sh
 
-EXPOSE 5001
+ENV FLASK_APP server.py
+ENV FLASK_ENV development
+ENV PYTHON_PATH /usr/bin/python3
 
-CMD ["python3", "server.py"]
+EXPOSE 5000
+
+CMD ["flask", "run", "--host=0.0.0.0", "--port=5000"]
+
